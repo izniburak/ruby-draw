@@ -1,0 +1,23 @@
+#! /usr/bin/env ruby
+require('colorize')
+require('./src/app')
+
+loop do
+	draw = Draw::App.new
+
+	draw.intro
+
+	count = draw.set_team_count
+	redo if (count > 20 || count < 3)
+	
+	draw.set_team_list
+
+	draw.result
+
+	if (draw.exit).eql? "Y"
+		redo
+	else
+		draw.clear
+		break
+	end
+end	
