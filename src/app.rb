@@ -1,7 +1,6 @@
 require('colorize')
 module Draw
 	class App
-
 		VERSION = 1.0
 		attr_accessor :team_list, :team_count
 
@@ -22,8 +21,8 @@ module Draw
 				@team_list << team
 			end
 			if (@team_count % 2) == 1
-				@team_list << "-------" 
-				@team_count+=1 
+				@team_list << "-------"
+				@team_count+=1
 			end
 			@team_list
 			@team_list.shuffle!
@@ -31,10 +30,8 @@ module Draw
 
 		def result
 			clear
-
 			home = Array.new
 			away = Array.new
-
 			print " "
 			puts " RESULTS: ".bold.on_red
 			for week in (1...team_count)
@@ -91,6 +88,5 @@ module Draw
 			puts " "
 			print " #{msg} ".bold
 		end
-
 	end
 end
