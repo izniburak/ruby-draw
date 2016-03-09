@@ -1,4 +1,3 @@
-#! /usr/bin/env ruby
 require('colorize')
 require('./src/app')
 
@@ -9,7 +8,7 @@ loop do
 
 	count = draw.set_team_count
 	redo if (count > 20 || count < 3)
-	
+
 	draw.set_team_list
 
 	draw.result
@@ -20,4 +19,4 @@ loop do
 		draw.clear
 		break
 	end
-end	
+end
