@@ -15,7 +15,7 @@ module Draw
 		end
 
 		def set_team_list
-			for i in (1..@team_count) do
+			(1..@team_count).each do |i|
 				print " #{i}. Team Name: ".bold.yellow
 				team = gets.chomp
 				@team_list << team
@@ -34,7 +34,7 @@ module Draw
 			away = Array.new
 			print " "
 			puts " RESULTS: ".bold.on_red
-			for week in (1...team_count)
+			(1...team_count).each do |week|
 				i = 0
 				team_list.each do |team|
 					(i % 2 == 0) ? home << team : away << team
@@ -44,12 +44,12 @@ module Draw
 				puts " Week #{week}: \n".on_green.bold
 				print " "
 				puts "\tHome#{" " * 15}    #{" " * 15}Away".bold.on_blue
-				for i in (0..(team_count.to_f/2).ceil-1)
+				(0..(team_count.to_f/2).ceil-1).each do |i|
 					puts " \t#{home[i]}#{" " * (19 - home[i].length)} vs #{" " * (19 - away[i].length)}#{away[i]}".bold
 				end
 
 				a, b = -1, 2
-				for x in (1..team_count-2) do
+				(1..team_count-2).each do
 					a+=2 if (b % 2) == 0
 					team_list[a], team_list[b] = team_list[b], team_list[a]
 					b+=1
