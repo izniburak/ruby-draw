@@ -13,7 +13,7 @@ $ cd ruby-draw
 And run script:
 
 ```
-$ ./draw
+$ ruby draw
 ```
 
 ## Contributing
