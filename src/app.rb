@@ -1,7 +1,7 @@
 require('colorize')
 module Draw
 	class App
-		VERSION = 1.0
+		VERSION = 1.1
 		attr_accessor :team_list, :team_count
 
 		def initialize
@@ -30,10 +30,10 @@ module Draw
 
 		def result
 			clear
+			intro
 			home = Array.new
 			away = Array.new
-			print " "
-			puts " RESULTS: ".bold.on_red
+			puts "\n RESULTS: ".bold.on_red
 			(1...team_count).each do |week|
 				i = 0
 				team_list.each do |team|
@@ -41,11 +41,13 @@ module Draw
 					i+=1
 				end
 				print "\n "
-				puts " Week #{week}: \n".on_green.bold
-				print " "
-				puts "\tHome#{" " * 15}    #{" " * 15}Away".bold.on_blue
+				puts " Week #{week}:".on_green.bold
+				puts "\n"
+				print " \t"
+				puts "Home#{" " * 15}    #{" " * 15}Away".bold.on_blue
 				(0..(team_count.to_f/2).ceil-1).each do |i|
-					puts " \t#{home[i]}#{" " * (19 - home[i].length)} vs #{" " * (19 - away[i].length)}#{away[i]}".bold
+					print " \t"
+					puts "#{home[i]}#{" " * (19 - home[i].length)} vs #{" " * (19 - away[i].length)}#{away[i]}".bold
 				end
 
 				a, b = -1, 2
