@@ -40,7 +40,7 @@ module Draw
 					(i % 2 == 0) ? home << team : away << team
 					i+=1
 				end
-				print "\n "
+				print "\n 	"
 				puts " Week #{week}:".on_green.bold
 				puts "\n"
 				print " \t"
